@@ -1,0 +1,136 @@
+body {
+    background-color: #1a1a1a; /* Cor de fundo do site */
+    color: #ffffff; /* Cor do texto padrão do site */
+    font-family: 'Arial', sans-serif; /* Escolha a fonte desejada para o site */
+    margin: 0;
+}
+
+/* Adicione estilos para outras partes do site conforme necessário */
+
+#header {
+    background-color: #262626; /* Cor de fundo do cabeçalho, se aplicável */
+    color: #ffffff; /* Cor do texto no cabeçalho */
+    /* Outros estilos para o cabeçalho */
+}
+
+body {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+}
+
+header {
+    background-color: #262626;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+.tl{
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+.logo-container{
+    margin-left: 10px;
+}
+
+.logo-container img {
+    max-height: 24px;
+}
+
+nav {
+    display: flex;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #00bfff;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input {
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background-color: #333;
+    color: #ffffff;
+}
+
+.search-bar button {
+    margin-left: 10px;
+    padding: 8px;
+    background-color: #00bfff;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+/* Mantenha o restante do código igual */
+
+.search-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.search-container p {
+    font-size: 16px;
+    color: #00bfff;
+    margin-bottom: 5px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Adicionado para centralizar a barra de pesquisa */
+}
+
+.search-bar input {
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background-color: #333;
+    color: #ffffff;
+}
+
+.search-bar button {
+    margin-left: 10px;
+    padding: 8px;
+    background-color: #00bfff;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+#footer {
+    background-color: #262626;
+    color: #ffffff;
+
+}
