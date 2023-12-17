@@ -1,16 +1,12 @@
 body {
-    background-color: #1a1a1a; /* Cor de fundo do site */
-    color: #ffffff; /* Cor do texto padrão do site */
-    font-family: 'Arial', sans-serif; /* Escolha a fonte desejada para o site */
-    margin: 0;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
 }
 
-/* Adicione estilos para outras partes do site conforme necessário */
-
 #header {
-    background-color: #262626; /* Cor de fundo do cabeçalho, se aplicável */
-    color: #ffffff; /* Cor do texto no cabeçalho */
-    /* Outros estilos para o cabeçalho */
+    background-color: #262626;
+    color: #ffffff;
 }
 
 body {
@@ -55,6 +51,25 @@ nav ul {
 
 nav ul li {
     margin-right: 20px;
+    position: relative;
+}
+nav ul li.submenu ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #262626;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    width: 100%;
+}
+
+nav ul li.submenu:hover ul {
+    display: flex;
+    flex-direction: column;
+}
+
+nav ul li.submenu ul li {
+    width: 100%;
 }
 
 nav a {
@@ -90,7 +105,6 @@ nav a:hover {
     border-radius: 5px;
     cursor: pointer;
 }
-/* Mantenha o restante do código igual */
 
 .search-container {
     text-align: center;
@@ -106,7 +120,7 @@ nav a:hover {
 .search-bar {
     display: flex;
     align-items: center;
-    justify-content: center; /* Adicionado para centralizar a barra de pesquisa */
+    justify-content: center;
 }
 
 .search-bar input {
@@ -129,8 +143,33 @@ nav a:hover {
 }
 
 
-#footer {
+
+body {
+    min-height: 100vh; /* Garante que o corpo ocupa pelo menos a altura total da viewport */
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
     background-color: #262626;
     color: #ffffff;
+    padding: 20px;
+    text-align: center;
+    margin-top: auto;
+}
 
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.copyright {
+    flex-grow: 1;
+}
+
+.social-links a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-right: 10px;
 }
