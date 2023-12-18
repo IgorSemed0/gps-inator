@@ -14,6 +14,9 @@ class Servicos extends Migration
             $table->text('descricao');
             $table->string('endereco');
             $table->string('provincia');
+            $table->string('bilhete_identidade');
+            $table->string('fotografia');
+            $table->string('curriculum');
             $table->timestamps();
         });
     }
