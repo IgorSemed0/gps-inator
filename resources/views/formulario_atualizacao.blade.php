@@ -222,15 +222,16 @@
     </header>
 
   <div id="content">
-    <form action="/cadastrar-servico" id="form" method="POST">
+    <form action="/atualizar-servico/{{$servico->id}}" id="form" method="POST">
         @csrf
+        @method("PUT")
         <fieldset>
             <legend><h2>Cadastrar serviço</h2></legend>
             <h3>Dados do Serviço</h3>
-            <label for="Servico">Serviço<br><input type="text" required id="Servico" placeholder="Digite o tipo de serviço" name="servico"></label><br>
+            <label for="Servico">Serviço<br><input type="text" required id="Servico" placeholder="Digite o tipo de serviço" name="servico" value="{{$servico->servico}}"</label><br>
             <br>
             <label for="provincia">Escolha a província:<br></label>
-            <select name="provincia" id="provincia">
+            <select name="provincia" id="provincia" value="{{$servico->provincia}}">
                 <option value="Bengo">Bengo</option>
                     <option value="Benguela">Benguela</option>
                     <option value="Bié">Bié</option>
@@ -250,19 +251,19 @@
                     <option value="Uíge">Uíge</option>
                     <option value="Zaire">Zaire</option>
             </select> <br><br>
-            <label for="Endereco">Endereço<br><input required type="text" id="Endereco" placeholder="Endereço da instituição" name="endereco"></label>
+            <label for="Endereco">Endereço<br><input required type="text" id="Endereco" placeholder="Endereço da instituição" name="endereco" value="{{$servico->endereco}}"></label>
             <br><br>
-            <label for="Descricao">Descrição do Serviço <br><textarea required name="descricao" id="Descricao" cols="60" minlength="20" rows="5"  placeholder="Coloque a descrição do seu serviço aqui..." maxlength="250"></textarea></label><br>
+            <label for="Descricao">Descrição do Serviço <br><textarea required name="descricao" id="Descricao" cols="60" minlength="20" rows="5"  placeholder="Coloque a descrição do seu serviço aqui..." maxlength="250" value="{{$servico->descricao}}"></textarea></label><br>
 
             <h3>Documentos Requisitados</h3>
             <label for="BI">Bilhete de Identidade</label>
-            <input type="checkbox" name="bilhete_identidade" id="BI">
+            <input type="checkbox" name="bilhete_identidade" id="BI" value="{{$servico->bilhete_identidade}}">
             <br><br>
             <label for="Fotografias">Fotografias</label>
-            <input type="checkbox" name="fotografia" id="Foto">
+            <input type="checkbox" name="fotografia" id="Foto" value="{{$servico->fotografia}}">
             <br><br>
             <label for="curriculum">Curriculum</label>
-            <input type="checkbox" name="curriculum" id="curriculum">
+            <input type="checkbox" name="curriculum" id="curriculum" value="{{$servico->curriculum}}">
             <br><br>
             <input type="submit" value="Cadastrar">
         </fieldset>

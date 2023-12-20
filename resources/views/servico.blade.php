@@ -9,22 +9,28 @@
             background-color: #1a1a1a;
             color: #ffffff;
             font-family: 'Arial', sans-serif;
+        }
+
+        #header {
+            background-color: #262626;
+            color: #ffffff;
+        }
+
+        body {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            font-family: 'Arial', sans-serif;
             margin: 0;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
         }
 
         header {
             background-color: #262626;
-            color: #ffffff;
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 10px;
         }
-
-        .tl {
+        .tl{
             display: flex;
             align-items: center;
         }
@@ -33,8 +39,7 @@
             font-size: 24px;
             font-weight: bold;
         }
-
-        .logo-container {
+        .logo-container{
             margin-left: 10px;
         }
 
@@ -55,7 +60,6 @@
             margin-right: 20px;
             position: relative;
         }
-
         nav ul li.submenu ul {
             display: none;
             position: absolute;
@@ -83,6 +87,30 @@
 
         nav a:hover {
             color: #00bfff;
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+        }
+
+        .search-bar input {
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #555;
+            border-radius: 5px;
+            background-color: #333;
+            color: #ffffff;
+        }
+
+        .search-bar button {
+            margin-left: 10px;
+            padding: 8px;
+            background-color: #00bfff;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
         }
 
         .search-container {
@@ -121,61 +149,12 @@
             cursor: pointer;
         }
 
-        #content {
-            flex-grow: 1;
+
+
+        body {
+            min-height: 100vh;
             display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-        }
-
-        #form {
-            background-color: #262626;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
-            padding: 20px;
-            max-width: 600px;
-            width: 100%;
-            margin: 20px;
-        }
-
-        #form fieldset {
-            border: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        #form legend {
-            color: #ffffff;
-        }
-
-        #form h2, #form h3 {
-            color: #00bfff;
-        }
-
-        #form label {
-            display: block;
-            margin-bottom: 10px;
-        }
-
-        #form input,
-        #form select,
-        #form textarea {
-            width: calc(100% - 16px);
-            padding: 8px;
-            box-sizing: border-box;
-            margin-bottom: 10px;
-            border: 1px solid #555;
-            border-radius: 5px;
-            background-color: #333;
-            color: #ffffff;
-        }
-
-        #form input[type="submit"] {
-            background-color: #00bfff;
-            color: #ffffff;
-            cursor: pointer;
-            box-shadow: #161616;
+            flex-direction: column;
         }
 
         footer {
@@ -183,6 +162,7 @@
             color: #ffffff;
             padding: 20px;
             text-align: center;
+            margin-top: auto;
         }
 
         .footer-content {
@@ -194,7 +174,15 @@
         .copyright {
             flex-grow: 1;
         }
+
+        .social-links a {
+            color: #ffffff;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+
     </style>
+
 </head>
 <body>
 
@@ -221,58 +209,27 @@
         </nav>
     </header>
 
-  <div id="content">
-    <form action="/cadastrar-servico" id="form" method="POST">
-        @csrf
-        <fieldset>
-            <legend><h2>Cadastrar serviço</h2></legend>
-            <h3>Dados do Serviço</h3>
-            <label for="Servico">Serviço<br><input type="text" required id="Servico" placeholder="Digite o tipo de serviço" name="servico"></label><br>
-            <br>
-            <label for="provincia">Escolha a província:<br></label>
-            <select name="provincia" id="provincia">
-                <option value="Bengo">Bengo</option>
-                    <option value="Benguela">Benguela</option>
-                    <option value="Bié">Bié</option>
-                    <option value="Cabinda">Cabinda</option>
-                    <option value="Cuando Cubango">Cuando Cubango</option>
-                    <option value="Cuanza Norte">Cuanza Norte</option>
-                    <option value="Cuanza Sul">Cuanza Sul</option>
-                    <option value="Cunene">Cunene</option>
-                    <option value="Huambo">Huambo</option>
-                    <option value="Huíla">Huíla</option>
-                    <option value="Luanda">Luanda</option>
-                    <option value="Lunda Norte">Lunda Norte</option>
-                    <option value="Lunda Sul">Lunda Sul</option>
-                    <option value="Malanje">Malanje</option>
-                    <option value="Moxico">Moxico</option>
-                    <option value="Namibe">Namibe</option>
-                    <option value="Uíge">Uíge</option>
-                    <option value="Zaire">Zaire</option>
-            </select> <br><br>
-            <label for="Endereco">Endereço<br><input required type="text" id="Endereco" placeholder="Endereço da instituição" name="endereco"></label>
-            <br><br>
-            <label for="Descricao">Descrição do Serviço <br><textarea required name="descricao" id="Descricao" cols="60" minlength="20" rows="5"  placeholder="Coloque a descrição do seu serviço aqui..." maxlength="250"></textarea></label><br>
 
-            <h3>Documentos Requisitados</h3>
-            <label for="BI">Bilhete de Identidade</label>
-            <input type="checkbox" name="bilhete_identidade" id="BI">
-            <br><br>
-            <label for="Fotografias">Fotografias</label>
-            <input type="checkbox" name="fotografia" id="Foto">
-            <br><br>
-            <label for="curriculum">Curriculum</label>
-            <input type="checkbox" name="curriculum" id="curriculum">
-            <br><br>
-            <input type="submit" value="Cadastrar">
-        </fieldset>
+  <div class="search-container">
+    <p>Encontrar Serviço</p>
+    <form action="{{ route('pesquisar-servicos') }}" method="POST">
+        @csrf
+        <div class="search-bar">
+            <input type="text" placeholder="Pesquisar..." name="termo_pesquisa">
+            <button type="submit">Buscar</button>
+        </div>
     </form>
+
   </div>
+
 
   <footer>
     <div class="footer-content">
         <div class="copyright">
             <p>&copy; 2023 DOC-GPS. Todos os direitos reservados.</p>
+        </div>
+        <div class="social-links">
+
         </div>
     </div>
   </footer>
